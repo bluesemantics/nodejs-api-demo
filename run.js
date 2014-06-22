@@ -5,7 +5,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     person = require('./routes/person');
-    
+
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -17,6 +17,6 @@ app.get('/people/:id', person.findById);
 app.post('/people', person.addPerson);
 
 
-http.createServer(app).listen(app.get('port'), function () {
+http.createServer(app).listen('/tmp/nginx.socket', function () {
     console.log("Express server listening on port " + app.get('port'));
 });
