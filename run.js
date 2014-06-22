@@ -8,7 +8,7 @@ var express = require('express'),
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -18,5 +18,5 @@ app.post('/people', person.addPerson);
 
 
 http.createServer(app).listen('/tmp/nginx.socket', function () {
-    console.log("Express server listening on port " + app.get('port'));
+    //console.log("Express server listening on port " + app.get('port'));
 });
