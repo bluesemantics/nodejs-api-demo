@@ -23,13 +23,14 @@ exports.addPerson = function(req, res) {
 };
 
 exports.findAll = function(req, res) {
-    MongoClient.connect(process.env.MONGOLAB_URI, {native_parser:true}, function(err, db) {
+  res.send({});
+    /*MongoClient.connect(process.env.MONGOLAB_URI, {native_parser:true}, function(err, db) {
         db.collection('people', function(err, collection) {
             collection.find().toArray(function(err, items) {
                 res.send(items);
             });
         });
-    });
+    });*/
 };
 
 exports.findById = function(req, res) {
